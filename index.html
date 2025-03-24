@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifólio Valter Ribeiro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contatos" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <img src="/img/perfil.png" alt="foto de perfil" class="foto-perfil" />
+      <h1>Valter Ribeiro</h1>
+      <p class="cabecalho-subtitulo">Desenvolvedor Front-end</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab cumque
+          deserunt temporibus ullam doloremque natus magnam excepturi quas
+          tempore quod itaque corporis, omnis aliquid, rerum suscipit,
+          voluptatum aspernatur possimus distinctio!
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img
+            src="/img/ecommerce.png"
+            alt="landing page ecommerce"
+            class="projetos-imagem"
+          />
+          <div class="caixa-texto-projetos">
+            <h3 class="info-projetos">Site e-commerce</h3>
+            <p class="paragrafo-projetos">
+              colocar aqui uma breve descriçao sobre o site
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img
+            src="/img/petboutique.png"
+            alt="landing page pet"
+            class="projetos-imagem"
+          />
+          <div class="caixa-texto-projetos">
+            <h3 class="info-projetos">Landing page pet</h3>
+            <p class="paragrafo-projetos">
+              colocar aqui uma breve descriçao sobre o app
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img
+            src="/img/mario.png"
+            alt="Jogo mario jump"
+            class="projetos-imagem"
+          />
+          <div class="caixa-texto-projetos">
+            <h3 class="info-projetos">Jogo Mario Jump</h3>
+            <p class="paragrafo-projetos">
+              colocar aqui uma breve descriçao sobre o app
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <form class="formulario-contato" id="formulario" onsubmit="enviar(event)">
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="nome" />
+        </div>
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua mensagem"
+            id="mensagem"
+            rows="6"
+          ></textarea>
+        </div>
+        <button type="submit" class="botao-form">Enviar WhatsApp</button>
+      </form>
+    </section>
+    <script>
+      function enviar(event) {
+        const nome = document.getElementById("nome");
+        const mensagem = document.getElementById("mensagem");
+        const telefone = "5573991819439";
+
+        const texto = `Olá, meu nome é ${nome.value}, ${mensagem.value}`;
+        const msgFormatada = encodeURIComponent(texto);
+        const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
